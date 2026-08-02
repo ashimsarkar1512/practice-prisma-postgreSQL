@@ -1,8 +1,9 @@
 model user {
-  id        Int      @id @default(autoincrement())
+  id        String     @id @default(uuid())
   name      String
   email     String   @unique
   password  String
+  blocked   Boolean    @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
